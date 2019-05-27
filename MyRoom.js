@@ -1,9 +1,9 @@
-const colyseus = require('colyseus');
+import { Room } from 'colyseus';
 
-exports.MyRoom = class extends colyseus.Room {
-  onInit (options) {}
-  onJoin (client, options) {}
-  onMessage (client, message) {}
-  onLeave (client, consented) {}
-  onDispose() {}
+export class MyRoom extends Room {
+    onInit(options) {}
+    onJoin(client, options) {}
+    onMessage(client, message) {}
+    onLeave(client, consented) {}
+    onDispose() {}
 }

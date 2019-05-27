@@ -1,19 +1,18 @@
 {
-  "name": "my-app",
+  "name": "PongServer",
   "version": "1.0.0",
-  "description": "npm init template for bootstraping an empty Colyseus project",
+  "description": "it's a Pong Game server side",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "loadtest": "colyseus-loadtest loadtest/example.js --room my_room --numClients 2",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "loadtest": "colyseus-loadtest loadtest/example.js --room my_room --numClients 2"
   },
-  "author": "",
-  "license": "UNLICENSED",
+  "author": "Mohammad Javad Ghasemy",
+  "license": "MIT",
   "bugs": {
-    "url": "https://github.com/colyseus/create-colyseus/issues"
+    "url": "https://github.com/geeksesi/PongServer"
   },
-  "homepage": "https://github.com/colyseus/create-colyseus#readme",
+  "homepage": "https://playcanvas.com/project/620126/overview/pongmultiplayer",
   "devDependencies": {
     "@colyseus/loadtest": "^0.10.1"
   },

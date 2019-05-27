@@ -1,16 +1,16 @@
-const http = require('http');
-const express = require('express');
-const colyseus = require('colyseus');
-const monitor = require("@colyseus/monitor").monitor;
-const socialRoutes = require("@colyseus/social/express").default;
+import { createServer } from 'http';
+import express from 'express';
+import { Server } from 'colyseus';
+import { monitor } from "@colyseus/monitor";
+import socialRoutes from "@colyseus/social/express";
 
-const MyRoom = require('./MyRoom').MyRoom;
+import { MyRoom } from './MyRoom';
 
 const port = process.env.PORT || 2567;
 const app = express()
 
-const server = http.createServer(app);
-const gameServer = new colyseus.Server({ server });
+const server = createServer(app);
+const gameServer = new Server({ server });
 
 // register your room handlers
 gameServer.register('my_room', MyRoom);

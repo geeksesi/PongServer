@@ -4,8 +4,9 @@
   "description": "it's a Pong Game server side",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
-    "loadtest": "colyseus-loadtest loadtest/example.js --room my_room --numClients 2"
+    "start": "node src/index.js",
+    "test": "DEBUG=colyseus:* node src/index.js",
+    "loadtest": "colyseus-loadtest loadtest/example.js --room set_score --numClients 2"
   },
   "author": "Mohammad Javad Ghasemy",
   "license": "MIT",
@@ -14,6 +15,9 @@
   },
   "homepage": "https://playcanvas.com/project/620126/overview/pongmultiplayer",
   "devDependencies": {
+    "@babel/cli": "^7.0.0",
+    "@babel/core": "^7.0.0",
+    "@babel/preset-env": "^7.4.5",
     "@colyseus/loadtest": "^0.10.1"
   },
   "dependencies": {
@@ -21,6 +25,9 @@
     "@colyseus/social": "^0.10.2",
     "colyseus": "^0.10.7",
     "express": "^4.16.4",
-    "express-jwt": "^5.3.1"
+    "express-jwt": "^5.3.1",
+    "mongoose": "^5.5.11",
+    "mongoose-unique-validator": "^2.0.3",
+    "password-hash": "^1.2.2"
   }
 }

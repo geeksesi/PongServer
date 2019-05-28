@@ -24,11 +24,21 @@ function add_user(username, password, cb) {
 
 }
 
-function increament_score() {
-
+function update_score(user_id, score, cb) {
+    resault = {};
+    db_module.User.findOneAndUpdate({_id : user_id}, {score : score}, (err, user) => {
+        if (err) {
+            resault.ok = false;
+            resault.body = err;
+        } else {
+            resault.ok = true;
+            resault.body = user;
+        }
+        cb(resault);
+    });
 }
 
 module.exports = {
     add_user: add_user,
-    increament_score: increament_score
+    update_score: update_score
 };

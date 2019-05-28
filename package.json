@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "test": "DEBUG=colyseus:* node src/index.js",
-    "loadtest": "colyseus-loadtest loadtest/example.js --room set_score --numClients 2"
+    "loadtest": "colyseus-loadtest loadtest/example.js --room set_score --numClients 1"
   },
   "author": "Mohammad Javad Ghasemy",
   "license": "MIT",

@@ -9,6 +9,16 @@ exports.requestJoinOptions = function()
 
 exports.onJoin = function () {
     console.log(this.sessionId, "joined.");
+
+    // setInterval(
+        this.send({type : "start"})
+    //     10000
+    // );
+    
+    setInterval(
+        () => {this.send({type : "finish"})},
+        15000
+    );
 }
 
 exports.onMessage = function (message) {

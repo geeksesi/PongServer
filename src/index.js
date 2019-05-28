@@ -15,7 +15,7 @@ const server = http.createServer(app);
 const gameServer = new colyseus.Server({ server });
 
 
-mongo.connect('mongodb://127.0.0.1:27017/pong', {useNewUrlParser: true, autoIndex: false});
+mongo.connect('mongodb://127.0.0.1:27017/pong', {useNewUrlParser: true, useFindAndModify: false});
 
 // register your room handlers
 gameServer.register('set_score', rooms.SetScore);

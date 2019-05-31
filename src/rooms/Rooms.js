@@ -10,6 +10,7 @@ exports.SetScore = class extends colyseus.Room {
     onInit(options) {
         this.authed_client = {};
         console.log("init");
+        this.start_game();
     }
 
     onAuth(options) {
@@ -78,4 +79,11 @@ exports.SetScore = class extends colyseus.Room {
     }
     onLeave(client, consented) {}
     onDispose() {}
+
+
+    start_game()
+    {
+        
+    }
+
 }

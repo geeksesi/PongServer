@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/bin/node /usr/share/yarn/bin/yarn.js add password-hash
+  /usr/bin/node /usr/share/yarn/bin/yarn.js add matter.js
 
 PATH: 
   /home/geeksesi/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin
@@ -14,7 +14,17 @@ Platform:
   linux x64
 
 Trace: 
-  Error: EACCES: permission denied, unlink '/home/geeksesi/public_html/Game/PongServer/node_modules/@babel/core/node_modules/debug/README.md'
+  Error: https://registry.yarnpkg.com/matter.js: Not found
+      at Request.params.callback [as _callback] (/usr/share/yarn/lib/cli.js:66091:18)
+      at Request.self.callback (/usr/share/yarn/lib/cli.js:129590:22)
+      at Request.emit (events.js:193:13)
+      at Request.<anonymous> (/usr/share/yarn/lib/cli.js:130562:10)
+      at Request.emit (events.js:193:13)
+      at IncomingMessage.<anonymous> (/usr/share/yarn/lib/cli.js:130484:12)
+      at Object.onceWrapper (events.js:281:20)
+      at IncomingMessage.emit (events.js:198:15)
+      at endReadableNT (_stream_readable.js:1139:12)
+      at processTicksAndRejections (internal/process/task_queues.js:81:17)
 
 npm manifest: 
   {
@@ -25,7 +35,7 @@ npm manifest:
     "scripts": {
       "start": "node src/index.js",
       "test": "DEBUG=colyseus:* node src/index.js",
-      "loadtest": "colyseus-loadtest loadtest/example.js --room set_score --numClients 2"
+      "loadtest": "colyseus-loadtest loadtest/example.js --room set_score --numClients 1"
     },
     "author": "Mohammad Javad Ghasemy",
     "license": "MIT",
@@ -44,7 +54,10 @@ npm manifest:
       "@colyseus/social": "^0.10.2",
       "colyseus": "^0.10.7",
       "express": "^4.16.4",
-      "express-jwt": "^5.3.1"
+      "express-jwt": "^5.3.1",
+      "mongoose": "^5.5.11",
+      "mongoose-unique-validator": "^2.0.3",
+      "password-hash": "^1.2.2"
     }
   }
 
@@ -2142,6 +2155,16 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/kind-of/-/kind-of-6.0.2.tgz#01146b36a6218e64e58f3a8d66de5d7fc6f6d051"
     integrity sha512-s5kLOcnH0XqDO+FvuaLX8DDjZ18CGFk7VygH40QoKPUQhW4e2rvM0rwUq0t8IQDOwYSeLK01U90OjzBTme2QqA==
   
+  lodash.foreach@^4.1.0:
+    version "4.5.0"
+    resolved "https://registry.yarnpkg.com/lodash.foreach/-/lodash.foreach-4.5.0.tgz#1a6a35eace401280c7f06dddec35165ab27e3e53"
+    integrity sha1-Gmo16s5AEoDH8G3d7DUWWrJ+PlM=
+  
+  lodash.get@^4.0.2:
+    version "4.4.2"
+    resolved "https://registry.yarnpkg.com/lodash.get/-/lodash.get-4.4.2.tgz#2d177f652fa31e939b4438d5341499dfa3825e99"
+    integrity sha1-LRd/ZS+jHpObRDjVNBSZ36OCXpk=
+  
   lodash.includes@^4.3.0:
     version "4.3.0"
     resolved "https://registry.yarnpkg.com/lodash.includes/-/lodash.includes-4.3.0.tgz#60bb98a87cb923c68ca1e51325483314849f553f"
@@ -2343,7 +2366,15 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
     integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
   
-  mongoose@^5.5.6:
+  mongoose-unique-validator@^2.0.3:
+    version "2.0.3"
+    resolved "https://registry.yarnpkg.com/mongoose-unique-validator/-/mongoose-unique-validator-2.0.3.tgz#247adbcda391bf5bc63fc3dcd43286a9ec833fa4"
+    integrity sha512-3/8pmvAC1acBZS6eWKAWQUiZBlARE1wyWtjga4iQ2wDJeOfRlIKmAvTNHSZXKaAf7RCRUd7wh7as6yWAOrjpQg==
+    dependencies:
+      lodash.foreach "^4.1.0"
+      lodash.get "^4.0.2"
+  
+  mongoose@^5.5.11, mongoose@^5.5.6:
     version "5.5.11"
     resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.5.11.tgz#3e83ea51b8e71d6e6af6cd48871843c8f523e73f"
     integrity sha512-jLYPk4jYe1N5CNwBcj48tQwQZ5Dc8VsnAjdMiqaKh5+CwU9EqEfuEtYMkFhJLu/LaTA4LN7crFzydGHdlAZtmg==
@@ -2629,6 +2660,11 @@ Lockfile:
     version "0.1.1"
     resolved "https://registry.yarnpkg.com/pascalcase/-/pascalcase-0.1.1.tgz#b363e55e8006ca6fe21784d2db22bd15d7917f14"
     integrity sha1-s2PlXoAGym/iF4TS2yK9FdeRfxQ=
+  
+  password-hash@^1.2.2:
+    version "1.2.2"
+    resolved "https://registry.yarnpkg.com/password-hash/-/password-hash-1.2.2.tgz#3b451f014de4b2e1ebfa0e5493b9517b1063af1d"
+    integrity sha1-O0UfAU3ksuHr+g5Uk7lRexBjrx0=
   
   path-dirname@^1.0.0:
     version "1.0.2"

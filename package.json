@@ -26,6 +26,7 @@
     "colyseus": "^0.10.7",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
+    "matter-js": "^0.14.2",
     "mongoose": "^5.5.11",
     "mongoose-unique-validator": "^2.0.3",
     "password-hash": "^1.2.2"
